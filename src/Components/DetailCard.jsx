@@ -1,10 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { ContextGlobal } from "./utils/global.context";
-import styles from "./DetailCard.module.css";
-import Card from "./Card";
 import axios from "axios";
-import Table from "./DetailTable";
 import DetailTable from "./DetailTable";
 
 
@@ -23,8 +20,6 @@ const DetailCard = () => {
       )
   }, [])
 
-
-  console.log(data)
 
   return (
     <>
