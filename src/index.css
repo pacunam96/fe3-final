@@ -64,10 +64,20 @@ footer > p{
 form{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  width: 300px;
+  justify-content: center;
+  width: 500px;
   height: 100px;
   margin: 0 auto;
+  padding-top: 150px;
+  
+
+}
+
+input{
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+
 }
 
 .card{
@@ -100,6 +110,7 @@ table {
     width: 100%;
     display: table;
     border: 1px solid #ccc;
+    
 
 }
 
@@ -119,4 +130,30 @@ tr:nth-child(even) {
 }
 .dark > a {
   color: white;
+}
+button [type=Submit]{
+	background: #2979ff;
+	color: #fff;
+	border: 1px solid #eee;
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px #eee;
+  width: 20px;
+}
+h2{
+  text-align: center;
+  color: #2979ff;
+}
+p{
+  text-align: center;
+  font-size: 20px;
+}
+.nav-link{
+  font-Size : 25px;
+}
+#validacionFalsa{
+  color: red;
+  padding-top: 150px;
+  text-align: center;
+  font-size: 20px;
+  font-style: italic;
 }
