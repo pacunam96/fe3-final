@@ -51,28 +51,10 @@ const Contact = () => {
   return (
     <div>
       <form onSubmit={onSubmit}>
-          <label htmlFor="nombreApellido"></label>
           <h2>Want to know more?</h2>
           <p>Send us your questions and we will contact you</p>
-          <input 
-            type="text" 
-            id="nombreApellido" 
-            placeholder="First & Last Name" 
-            value={fullName.input} 
-            onChange={onChange}
-            onKeyUp={validacion}
-            onBlur={validacion}
-          />
-          <label htmlFor="email"></label>
-          <input 
-            type="email" 
-            id="email" 
-            placeholder="E-mail" 
-            value={email.input} 
-            onChange={onChange2}
-            onKeyUp={validacion2}
-            onBlur={validacion2}
-          />
+          <input type="text" placeholder="First & Last Name" value={fullName.input} onChange={onChange} onKeyUp={validacion} onBlur={validacion}/>
+          <input type="email" placeholder="E-mail" value={email.input} onChange={onChange2} onKeyUp={validacion2} onBlur={validacion2}/>
           <button type="submit" >Submit</button>
       </form>
       <div id="validacionFalsa"></div>
