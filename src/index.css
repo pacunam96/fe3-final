@@ -41,25 +41,14 @@ a:hover{
 } 
 
 footer {
-  display: flex;
   justify-content: center;
-  text-align: center;
+  text-align: right;
   padding: 2rem;
-  position: relative;
-  bottom: 0;
-  width: 90%;
-  height: 40px;
-  margin-top: 2rem;
+  width: 100%;
+  background-color: #2979ff;
+  display: flex;
 }
 
-footer > img{
-  width: 200px;
-  margin: 0;
-}
-footer > p{
-  margin: 0;
-  padding-top: 0.7rem;
-}
 
 form{
   display: flex;
@@ -111,7 +100,6 @@ table {
     display: table;
     border: 1px solid #ccc;
     
-
 }
 
 td, th {
@@ -156,4 +144,29 @@ p{
   text-align: center;
   font-size: 20px;
   font-style: italic;
+}
+#validacionVerdadera{
+  color: green;
+  padding-top: 150px;
+  text-align: center;
+  font-size: 20px;
+  font-style: italic;
+}
+footer img {
+  width: 60px;
+  border: 50px;
+  margin-left: 2rem;
+}
+
+.logoDH{
+  width: 300px;
+  margin-right: 10rem;
+}
+
+.Return{
+  width: 100%;
+  background-color: #f50057 ;
+  font-size: 20px;
+  padding: .5rem;
+  border: 2rem;
 }

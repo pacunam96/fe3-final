@@ -3,47 +3,46 @@ import { useState } from "react";
 
 
 const Contact = () => {
-  //Aqui deberan implementar el form completo con sus validaciones
-  const [fullName, cambiarNombreCompleto] = useState({campo: '', valido: null});
-  const [email, cambiarEmail] = useState({campo: '', valido: null});
-  const [formularioValido, cambiarFormularioValido] = useState(null);
+  const [fullName, changeFullName] = useState({input: '', valido: null});
+  const [email, changeEmail] = useState({input: '', valido: null});
+  const [okForm, changeokForm] = useState(null);
   const onChange = (e) =>{
-    cambiarNombreCompleto({...fullName, campo: e.target.value})
+    changeFullName({...fullName, input: e.target.value})
   }
   const onChange2 = (e) =>{
-    cambiarEmail({...email, campo: e.target.value})
+    changeEmail({...email, input: e.target.value})
   }
   const expresiones = {
-    nombre: /^[a-zA-ZÀ-ÿ\s]{3,40}$/, // Letras y espacios, pueden llevar acentos.
-    correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+    nombre: /^[a-zA-ZÀ-ÿ\s]{3,40}$/, 
+    correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
   }
   const validacion = () =>{
-    if(expresiones.nombre.test(fullName.campo)){
-      cambiarNombreCompleto({...fullName, valido: 'true'})
+    if(expresiones.nombre.test(fullName.input)){
+      changeFullName({...fullName, valido: 'true'})
     } else {
-      cambiarNombreCompleto({...fullName, valido: 'false'})
+      changeFullName({...fullName, valido: 'false'})
 
     }
   }
   const validacion2 = () =>{
-    if(expresiones.correo.test(email.campo)){
-      cambiarEmail({...email, valido: 'true'})
+    if(expresiones.correo.test(email.input)){
+      changeEmail({...email, valido: 'true'})
     } else {
-      cambiarEmail({...email, valido: 'false'})
+      changeEmail({...email, valido: 'false'})
     }
   }
   const onSubmit = (e) =>{
     e.preventDefault();
     if(email.valido === 'true' && fullName.valido === 'true'){
-      cambiarFormularioValido(true)
+      changeokForm(true)
       let validacionTrue = document.getElementById("validacionVerdadera");
       let validacionFalse = document.getElementById("validacionFalsa");
       validacionFalse.innerHTML = "";
-      validacionTrue.innerHTML = "<p>Gracias " + fullName.campo + ", te contactaremos cuanto antes via mail. </p>";
+      validacionTrue.innerHTML = "We will contact you shortly 📨" + fullName.input;
     } else {
-      cambiarFormularioValido(false)
+      changeokForm(false)
       let validacionFalse = document.getElementById("validacionFalsa");
-      validacionFalse.innerHTML = "Invalid E-mail address ⚠️";
+      validacionFalse.innerHTML = "Invalid Name or E-mail Address ⚠️";
       let validacionTrue = document.getElementById("validacionVerdadera");
       validacionTrue.innerHTML = "";
     }
@@ -59,7 +58,7 @@ const Contact = () => {
             type="text" 
             id="nombreApellido" 
             placeholder="First & Last Name" 
-            value={fullName.campo} 
+            value={fullName.input} 
             onChange={onChange}
             onKeyUp={validacion}
             onBlur={validacion}
@@ -69,7 +68,7 @@ const Contact = () => {
             type="email" 
             id="email" 
             placeholder="E-mail" 
-            value={email.campo} 
+            value={email.input} 
             onChange={onChange2}
             onKeyUp={validacion2}
             onBlur={validacion2}
