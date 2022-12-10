@@ -11,7 +11,7 @@ export const setFavInStorage = (dentist) => {
     if (isFavOnList.length === 0) {
         storageFavs.push(dentist)
         localStorage.setItem("favs", JSON.stringify(storageFavs));
-        alert("Dentista añadido");
+        alert("The dentist has been add to your favorites ♥️");
         return true;
     }
     else {

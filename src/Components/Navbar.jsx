@@ -18,12 +18,12 @@ const Navbar = () => {
         <div className="container">
           <Link className={`navbar-brand`} to="/home"><h1>🦷DH Dentist</h1> </Link>         
             <ul className="navbar-nav mb-2 mb-sm-0">
-              <li><Link className="nav-link" to="/home" >Home</Link></li>
-              <li><Link className="nav-link" to="/favs" >Favorites </Link></li>
-              <li><Link className="nav-link" to="/contact" >Contact Us</Link></li>              
+              <li><Link className="nav-link" to="/home" >Home🏡</Link></li>
+              <li><Link className="nav-link" to="/favs" >Favorites♥️ </Link></li>
+              <li><Link className="nav-link" to="/contact" >Contact U📧</Link></li>              
               <li>
                 <button  style={{size : 25, padding: 13}} className={`btn btn-${isDarkMode ? "light" : "dark"}`}onClick={changeTheme}>
-                  {isDarkMode ? <Brightness6TwoToneIcon sx={{ color: "#fbcc57" }} /> : <Brightness4TwoToneIcon sx={{ color: "#2979ff" }}/>}{" "}
+                  {isDarkMode ? <Brightness6TwoToneIcon sx={{ color: "#fafbeb" }} /> : <Brightness4TwoToneIcon sx={{ color: "#fafbeb" }}/>}{" "}
                 </button>
               </li>
             </ul>

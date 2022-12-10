@@ -9,7 +9,7 @@ const Favs = () => {
   }
   return (
     <>
-      <h1>⭐Dentistas Favoritos⭐</h1>
+      <h1>Your favorite dentists 👩‍⚕️</h1>
       <div className="card-grid container">
         {DentistasFavoritos.length
           ? DentistasFavoritos.map((favs) => (

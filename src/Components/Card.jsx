@@ -1,11 +1,9 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import {  setFavInStorage,   isFavorited, removeFavInStorage } from "./utils/localStorage.service";
-import FolderDeleteIcon from '@mui/icons-material/FolderDelete';
-import StarRateIcon from '@mui/icons-material/StarRate';
 import { ContextGlobal } from "./utils/global.context";
 import styles from "../index.css";
-import { purple, yellow } from "@mui/material/colors";
+import { Heart, Trash } from "react-bootstrap-icons";
 
 const Card = ({ id, name, username }) => {
   const [favorite, setFavorite] = useState(() => isFavorited(id));
@@ -31,11 +29,11 @@ const Card = ({ id, name, username }) => {
       <img className="card-img-top" src="/images/doctor.jpg" alt="doctor placeholder"/>
       <div className={`card-body ${styles.CardBody}`}>
         <Link to={`/users/${id}`}>
-          <h5 className={`card-title ${styles.title}`}>{name}</h5>
+          <h3>{name}</h3>
         </Link>
-        <p className="card">{username}</p>
+        <h1 className="name2">{username}</h1>
         <button onClick={favorite ? removeFav : addFav} className={`btn btn-${isDarkMode ? "dark" : "light"} ${styles.favButton}`}>
-          {favorite ? <FolderDeleteIcon sx={{ color: purple[900] }}/> :<StarRateIcon sx={{ color: yellow[700] }}/>}
+          {favorite ? <Trash color="#f50057" size={20} /> :<Heart color="#f50057" size={20}/>}
         </button>
       </div>
     </div>
